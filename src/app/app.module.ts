@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Injector } from '@angular/core';
+import { createCustomElement } from '@angular/elements';
 
 import { AppRoutingModule } from './routed/app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MyNavComponent } from './my-nav/my-nav.component';
+import { selector, MyNavComponent } from './my-nav/my-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import {
 	MatToolbarModule,
@@ -32,4 +33,8 @@ import {
 	bootstrap: [MyNavComponent],
 	entryComponents: [MyNavComponent],
 })
-export class AppModule { }
+export class AppModule {
+	constructor(private _injector: Injector) {
+		customElements.define(selector, createCustomElement(MyNavComponent, { injector: this._injector }));
+	}
+}

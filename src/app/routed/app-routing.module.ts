@@ -8,7 +8,7 @@ import { FirstAppComponent } from './first-app/first-app.component';
 import { SecondAppComponent } from './second-app/second-app.component';
 import { ThirdAppComponent } from './third-app/third-app.component';
 
-const declarations = [
+const components = [
 	HomeComponent,
 	FirstAppComponent,
 	SecondAppComponent,
@@ -25,11 +25,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-	declarations,
+	declarations: [...components],
 	imports: [RouterModule.forRoot(routes)],
 	exports: [
 		RouterModule,
-		...declarations,
+		...components,
 	]
 })
 export class AppRoutingModule { }

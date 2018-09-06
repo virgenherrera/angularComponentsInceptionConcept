@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "christian-kohler.npm-intellisense",
+    "EditorConfig.editorconfig",
+    "eg2.tslint",
+    "streetsidesoftware.code-spell-checker",
+    "msjsdiag.debugger-for-chrome"
+  ]
+}
